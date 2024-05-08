@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Shopping</title>
+    <meta name="keywords" content="cart">
+    <meta name="description" content="Landing page">
+    <meta name="author" content="Ada Akonkwo">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!------- font awesome cdn -------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<!-- body -->
+
+<body class="libre-baskerville-regular">
+    
+    <!-- advert_section -->
+    <div class="advert_section">
+        <div class="title">
+            <span>Shopping Time</span>
+        </div>
+        <div class="more">
+            <p>
+                <i class="fa fa-quote-left fa-3x fa-pull-left fa-border" aria-hidden="true"></i>
+                Christmas is here again Check out our offer. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                <br><br><button class="a-btn transparent">Start Shopping</button></p>
+        </div>
+    </div>
+    <!-- end advert_section -->
+
+    <!-- header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/index">BROWNDOVE</a>
+            </div>
+            <div class="menu" onclick="menuList()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="active"> <a href="/index">Home</a> </li>
+                    <li> <a href="about.html">About</a> </li>
+                    <li><a href="/shop">Shop</a></li>
+                    <li><a href="special.html">Specials</a></li>
+                    <li><a href="contact.html">Contact-Us</a></li>
+                </ul>
+            </div>
+            <!--search bar -->
+            <div class="s_bar location">
+                <input type="text" placeholder="Products Search" class="s_input">
+            </div>
+           
+            <div class="user">
+                <a href="#">Login/Sign Up</a>
+            </div>
+            <div class="cartIcon">
+                <i class="fa fa-shopping-basket cart_icon" aria-hidden="true"></i>
+                <span>1</span>
+            </div>
+        </nav>
+        <!-- end header inner -->
+    </header>
+   
+    <!-- cart basket-->
+    <div class="cartBasket">
+        <div class="card">
+            <div class="card-header"><b>Shopping Basket</b></div>
+            <!-- cart table -->
+            <div class="card-body">
+                <table class="table">
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Top Up</th>
+                        <th>Unit Price</th>
+                        <th>Total price</th>
+                        <th>Remove</th>
+                    </tr>
+                    <tr>
+                        <td><img src="images/product.jpg" alt=""></td>
+                        <td>Spa Oil</td>
+                        <!-- add more product -->
+                        <form action="/cart/update_quantity" method="post">
+                            <td style="display: flex; flex-direction: column; gap: 4px;">
+                                <input type="number" name="quantity" value="2" style="width:60px;" min="1">
+                                <input type="hidden" name="id" value="p1">
+                                <button type="submit" class="btn-primary ">Add Up</button>
+                            </td>
+                        </form>
+                        
+                        <td >
+                            <button class="topup">+</button>
+                            <button class="topup">-</button>
+                        </td>
+                        <td>$8</td>
+                        <td>$16</td>
+                        <td><button type="button" class="btn-danger"><b>Remove</b></button></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="3" align="right"><b>Total</b></td>
+                        <td>0.00</td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="5" align="center"> No item added</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- checkout button-->
+            <div class="checkout">
+                <form action="/pay/checkout" method="get">
+                    <input type="submit" value="CHECKOUT" name="" class="checkout">
+                </form>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="close">Continue Shopping</button>
+        </div>
+    </div>
+    <!-- cart basket ends -->
+
+
+    <div class="container">
+        <!-- best selling products-->
+        <section class="best-selling">
+            <h1 class="best-selling-h1"> Mostly Purchase Products</h1>
+            <div class="best-selling-product">
+                <div class="prod-card">
+                    <img src="images/product.jpg" alt="img" class="prod-img" />
+            
+                    <h3>$<strong>8</strong></h3>
+                    <h3 style="text-decoration: line-through; font-size: small; color: red; bottom:64px;">$<strong class="red">10</strong></h3>
+                    <span class="prod-name">Spa Oil</span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+
+
+                    <form action="/cart/add_to_cart" method="post">
+                        <input type="hidden" name="id" value="">
+                        <input type="hidden" name="name" value="">
+                        <input type="hidden" name="price" value="">
+                        <input type="hidden" name="image" value="">
+                        <input type="hidden" name="sale_price" value="">
+                        <input type="hidden" name="quantity" value="1" min="1">
+                        <input type="submit" value="Add to Basket" class="btn btn-primary">
+                    </form>
+                </div>
+
+                <div class="prod-card">
+                    <img src="images/product2.jpg" alt="img" class="prod-img" />
+            
+                    <h3>$<strong>350</strong></h3>
+                    <h3 style="text-decoration: line-through; font-size: small; color: red; bottom:64px;">$<strong class="red">10</strong></h3>
+                    <span class="prod-name">Phone Stand</span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+
+
+                    <form action="/cart/add_to_cart" method="post">
+                        <input type="hidden" name="id" value="">
+                        <input type="hidden" name="name" value="">
+                        <input type="hidden" name="price" value="">
+                        <input type="hidden" name="image" value="">
+                        <input type="hidden" name="sale_price" value="">
+                        <input type="hidden" name="quantity" value="1" min="1">
+                        <input type="submit" value="Add to Basket" class="btn btn-primary">
+                    </form>
+                </div>
+
+                <div class="prod-card">
+                    <img src="images/product3.jpg" alt="img" class="prod-img" />
+            
+                    <h3>$<strong>510</strong></h3>
+                    <h3 style="text-decoration: line-through; font-size: small; color: red; bottom:64px;">$<strong class="red">10</strong></h3>
+                    <span class="prod-name">Gift Set</span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+
+
+                    <form action="/cart/add_to_cart" method="post">
+                        <input type="hidden" name="id" value="">
+                        <input type="hidden" name="name" value="">
+                        <input type="hidden" name="price" value="">
+                        <input type="hidden" name="image" value="">
+                        <input type="hidden" name="sale_price" value="">
+                        <input type="hidden" name="quantity" value="1" min="1">
+                        <input type="submit" value="Add to Basket" class="btn btn-primary">
+                    </form>
+                </div>
+
+                <div class="prod-card">
+                    <img src="images/product4.jpg" alt="img" class="prod-img" />
+            
+                    <h3>$<strong>120</strong></h3>
+                    <h3 style="text-decoration: line-through; font-size: small; color: red; bottom:64px;">$<strong class="red">10</strong></h3>
+                    <span class="prod-name">Heel & Bag</span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+
+
+                    <form action="/cart/add_to_cart" method="post">
+                        <input type="hidden" name="id" value="">
+                        <input type="hidden" name="name" value="">
+                        <input type="hidden" name="price" value="">
+                        <input type="hidden" name="image" value="">
+                        <input type="hidden" name="sale_price" value="">
+                        <input type="hidden" name="quantity" value="1" min="1">
+                        <input type="submit" value="Add to Basket" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- best selling products ends-->
+        
+        <!-- ring part => second block-->
+        <section id="main-section">
+            <div class="m_content">
+                <img src="images/christmas.png" alt="">  
+            </div>
+
+            <!-- platform image -->
+            <div class="platform">
+                <img src="images/lens.png" alt="" class="ads">
+                <img src="images/dress.png" alt="" class="ads">
+                <div class="ads">
+                    <h1 class="tit">Make everyday count with a <span>season</span>gift</h1>
+                    <p class="tit-info">
+                        That makes u standout this holiday season. Shop smarter with us.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, inventore numquam. Nam pariatur vol
+                    </p>
+                    <button class="a-btn transparent">Shop Now</button>
+                </div> 
+            </div>
+        </section>
+        <!-- ring part => second block ends-->
+
+        <!-- collage => third block -->
+        <section class="third-block">
+            <div class="collage-img">
+                <div class="collection">
+                    <img src="images/blender.png" alt="" class="img">
+                    <img src="images/spa-kit.png" alt="" class="img">
+                    <img src="images/camera.png" alt="" class="img">
+                </div>
+            </div>
+        </section>
+        <!-- collage => third block ends -->
+    </div>
+
+    <!-- reviews -->
+    <center><h2>REVIEWS</h2></center>
+    <div class="reviews">
+        <div class="review-box">
+            <div class="reviewer-info">
+                <img src="images/user-1.png" alt="" class="rever-img">
+    
+                <div class="reviewer">
+                    <div class="reviewer-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <p>4.5</p>
+                    </div>
+                    <h2 class="reviewer-name">Frank</h2>
+                </div>
+            </div>
+            <div class="reviewer-comment">
+                <i class="fa-solid fa-quote-left"></i>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis tenetur voluptas magnam a labore sed corporis dolores omnis quo repellat beatae, repudiandae voluptatum, alias, earum deserunt rerum inventore corrupti pariatur.
+                </p>
+            </div>
+        </div>
+        <div class="review-box">
+            <div class="reviewer-info">
+                <img src="images/ivan.jpg" alt="" class="rever-img">
+    
+                <div class="reviewer">
+                    <div class="reviewer-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <p>4.5</p>
+                    </div>
+                    <h2 class="reviewer-name">Ivan</h2>
+                </div>
+            </div>
+            <div class="reviewer-comment">
+                <i class="fa-solid fa-quote-left"></i>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis tenetur voluptas magnam a labore sed corporis dolores omnis quo repellat beatae, repudiandae voluptatum, alias, earum deserunt rerum inventore corrupti pariatur.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- reviews ends -->
+    
+     <!-- footer -->
+    <footer>
+        <div class="footer">
+        <div class="last">
+                <h1 class="tit">Premium Quality; <span>Durable</span> Choice</h1>
+                <p>
+                    That makes u standout this holiday season. Shop smarter with us.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, inventore numquam. Nam pariatur vol
+                </p>
+                <button>Shop With Love</button>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <center>&copy; 2023 browndove</center>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- Javascript files-->
+
+    <script src="js/script.js"></script>
+
+<!-- cart.js and cart.css-->
+</body>
+
+</html>
